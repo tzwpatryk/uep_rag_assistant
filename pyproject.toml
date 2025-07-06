@@ -1,0 +1,38 @@
+[project]
+name = "uep-rag-assistant"
+version = "0.1.0"
+description = "Wirtualny asystent RAG wspomagający kandydatów na studia UEP w wyborze odpowiedniego kierunku"
+authors = [
+    {name = "Mateusz Kuczynski",email = "mateuszkuczynskianalytics@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = "^3.11"
+dependencies = [
+    "requests (>=2.32.4,<3.0.0)",
+    "beautifulsoup4 (>=4.13.4,<5.0.0)",
+    "selenium (>=4.34.0,<5.0.0)",
+    "python-dotenv (>=1.1.1,<2.0.0)",
+    "pandas (>=2.3.0,<3.0.0)",
+    "faiss-cpu (>=1.11.0,<2.0.0)",
+    "langchain (>=0.3.26,<0.4.0)",
+    "tiktoken (>=0.9.0,<0.10.0)",
+    "fastapi (>=0.115.14,<0.116.0)",
+    "uvicorn (>=0.35.0,<0.36.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.packages]]
+include = "uep_rag_assistant"
+from = "src"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+isort = "^6.0.1"
+mypy = "^1.16.1"
+pytest = "^8.4.1"
+
